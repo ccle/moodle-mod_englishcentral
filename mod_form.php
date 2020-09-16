@@ -88,25 +88,38 @@ class mod_englishcentral_mod_form extends moodleform_mod {
         $label = get_string($name, $plugin);
         $mform->addElement('date_time_selector', $name, $label, $dateoptions);
         $mform->addHelpButton($name, $name, $plugin);
-        $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        // START UCLA MOD: CCLE-8818 - Fix EnglishCentral timing bug.
+        // $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        // PARAM_INT is not compatible with the flatpickr date time selector, so use PARAM_NOTAGS.
+        $this->set_type_default_advanced($mform, $config, $name, PARAM_NOTAGS);
+        // END UCLA MOD: CCLE-8818.
 
         $name = 'videoopen';
         $label = get_string($name, $plugin);
         $mform->addElement('date_time_selector', $name, $label, $dateoptions);
         $mform->addHelpButton($name, $name, $plugin);
-        $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        // START UCLA MOD: CCLE-8818 - Fix EnglishCentral timing bug.
+        // $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        $this->set_type_default_advanced($mform, $config, $name, PARAM_NOTAGS);
+        // END UCLA MOD: CCLE-8818.
 
         $name = 'videoclose';
         $label = get_string($name, $plugin);
         $mform->addElement('date_time_selector', $name, $label, $dateoptions);
         $mform->addHelpButton($name, $name, $plugin);
-        $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        // START UCLA MOD: CCLE-8818 - Fix EnglishCentral timing bug.
+        // $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        $this->set_type_default_advanced($mform, $config, $name, PARAM_NOTAGS);
+        // END UCLA MOD: CCLE-8818.
 
         $name = 'activityclose';
         $label = get_string($name, $plugin);
         $mform->addElement('date_time_selector', $name, $label, $dateoptions);
         $mform->addHelpButton($name, $name, $plugin);
-        $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        // START UCLA MOD: CCLE-8818 - Fix EnglishCentral timing bug.
+        // $this->set_type_default_advanced($mform, $config, $name, PARAM_INT);
+        $this->set_type_default_advanced($mform, $config, $name, PARAM_NOTAGS);
+        // END UCLA MOD: CCLE-8818.
 
         //-------------------------------------------------------------------------------
         $name = 'goals';
